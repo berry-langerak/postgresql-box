@@ -3,18 +3,18 @@ error_reporting(E_ALL);
 ini_set('display_errors', true);
 
 $pdo = new PDO(
-    'pgsql:host=192.168.56.231;port=5432;dbname=enrise;sslmode=require', 'enrise', 'vagrant'
+    'pgsql:host=localhost;port=5432;dbname=enrise;sslmode=require', 'enrise', 'vagrant'
 );
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$stmt = $pdo->prepare('SELECT :demo::text AS demo');
+$stmt = $pdo->prepare(
+    "SELECT 'Hello world from ' || version() AS message"
+);
 
-$stmt->execute([
-    'demo' => 'Hello world!',
-]);
+$stmt->execute();
 
-echo $stmt->fetch()['demo'] . PHP_EOL;
+echo $stmt->fetch()['message'] . PHP_EOL;
 
 

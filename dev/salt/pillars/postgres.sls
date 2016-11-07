@@ -4,6 +4,9 @@ postgres:
       enrise:
         password: 'vagrant'
         createdb: True
+  acls:
+    - ['local', 'all', 'all', 'peer']
+    - ['host', 'all', 'all', '0.0.0.0/0', 'md5']
   databases:
     enrise:
       owner: 'enrise'
@@ -12,6 +15,5 @@ postgres:
       lc_ctype: 'C.UTF-8'
       lc_collate: 'C.UTF-8'
   postgresconf: |
-    listen_addresses = 'localhost,*'
+    listen_addresses = '192.168.56.231,localhost'
     timezone = 'Europe/Amsterdam'
-
