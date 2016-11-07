@@ -14,6 +14,10 @@ values are fair game, as far as I care ;)
 
 ## Get started
 
+*Note*: if you happen to be using something other than VirtualBox (like the way more 
+awesome libvirt), you will have to customise your `Vagrantfile.local` before doing 
+the first `vagrant up`.
+
 1. `git clone git@github.com:berry-langerak/postgresql-box.git postgresql-box`
 1. `cd postgresql-box`
 1. `git submodule update --init --recursive`
