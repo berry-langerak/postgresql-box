@@ -6,6 +6,12 @@ This is a box I created to use for the PostgreSQL workshop at Enrise. It contain
 * **Nginx** 1.10.2;
 * **PostgreSQL** 9.5.5 -- both client and server.
 
+## Important notes
+
+The PostgreSQL server listens specifically on "192.168.56.231". That also means that 
+you probably don't want to change the IP address in your Vagrantfile.local. All other
+values are fair game, as far as I care ;)
+
 ## Get started
 
 1. `git clone git@github.com:berry-langerak/postgresql-box.git postgresql-box`
