@@ -1,0 +1,6 @@
+[submodule "dev/basebox"]
+	path = dev/basebox
+	url = git@github.com:Enrise/basebox.git
+[submodule "dev/salt/formulas/postgres"]
+	path = dev/salt/formulas/postgres
+	url = https://github.com/saltstack-formulas/postgres-formula
